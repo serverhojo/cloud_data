@@ -1,0 +1,15 @@
+name: brain
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Place chrome...
+      run: ./setup.ps1
+    - name: Copy scripts
+      run: copy cron3.py C:\Users\runneradmin\cron3.py
+    - name: Run scripts
+      run: python C:\Users\runneradmin\cron3.py
